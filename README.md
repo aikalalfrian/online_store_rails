@@ -1,6 +1,6 @@
 # Online Store Project
 
-This README documents the necessary steps to set up and run the application.
+This project is a proof of concept for an online store application, focusing on inventory management to prevent order cancellations.
 
 ## Prerequisites
 - **Ruby Version**: 3.2.6
@@ -45,5 +45,66 @@ Access the application at: [http://localhost:3000](http://localhost:3000)
 This project uses RSpec for testing. Run all tests with the command:
 bundle exec rspec
 
-## Services
-This project does not currently use background job processing services like Sidekiq.
+## Postman Collection
+
+This project includes a Postman collection for testing the API endpoints. You can import the collection into Postman to easily test the API.
+
+### Collection: online_store_api
+
+#### 1. Login
+- **Method:** POST
+- **URL:** `http://localhost:3000/api/login`
+- **Body:** { "email": "default@kiwil.com", "password": "password123" }
+
+#### 2. Register
+- **Method:** POST
+- **URL:** `http://localhost:3000/api/register`
+- **Body:** { "user": { "email": "default_2@kiwil.com", "password": "password123", "password_confirmation": "password123" } }
+
+#### 3. Get Products
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/products`
+
+#### 4. Get Product by ID
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/products/{product_id}`
+
+#### 5. Check Inventory for Product
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/products/{product_id}/check_inventory`
+
+#### 6. Delete Product
+- **Method:** DELETE
+- **URL:** `http://localhost:3000/api/products/{product_id}`
+
+#### 7. Update Product
+- **Method:** PUT
+- **URL:** `http://localhost:3000/api/products/{product_id}`
+- **Body:** { "stock_quantity": 300 }
+
+#### 8. Checkout User's Cart
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/users/{user_id}/checkout_history`
+
+#### 9. Get User's Cart
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/carts`
+
+#### 10. Create Product
+- **Method:** POST
+- **URL:** `http://localhost:3000/api/products`
+- **Body:** { "product": { "name": "Product 1", "stock_quantity": 100 } }
+
+#### 11. Add to Cart
+- **Method:** POST
+- **URL:** `http://localhost:3000/api/carts`
+- **Body:** { "product_id": 4, "quantity": 200 }
+
+#### 12. Checkout Cart
+- **Method:** POST
+- **URL:** `http://localhost:3000/api/carts/{cart_id}/checkout`
+
+
+
+
+
