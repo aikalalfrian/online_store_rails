@@ -47,8 +47,6 @@ bundle exec rspec
 
 ## Postman Collection
 
-This project includes a Postman collection for testing the API endpoints. You can import the collection into Postman to easily test the API.
-
 ### Collection: online_store_api
 
 #### 1. Login
