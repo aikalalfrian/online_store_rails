@@ -3,11 +3,13 @@
 This README documents the necessary steps to set up and run the application.
 
 ## Prerequisites
-- **Ruby Version**: 3.0 or higher
+- **Ruby Version**: 3.2.6
+- **Rails Version**: 8.0.1
 - **System Dependencies**:
-  - Ruby (3.0 or higher)
+  - Ruby 3.2.6
+  - Rails 8.0.1
   - Bundler
-  - PostgreSQL (for development and production environments)
+  - Postgresql
 
 ## Configuration
 Clone the repository:
@@ -25,11 +27,14 @@ Edit `config/database.yml` to match your PostgreSQL credentials.
 Create the database by running:
 rails db:create
 
+## Database Migration
+rails db:migrate
+
 ## Database Initialization
-Load the schema into the database:
-rails db:schema:load
-If seed data is available, load it using:
-rails db:seed
+You just need to run rails db:migrate, and the first user will be created immediately. After that, you can log in with the following acc:
+
+U: default@kiwil.com
+P: password123
 
 ## Running the Application
 Start the Rails server:
